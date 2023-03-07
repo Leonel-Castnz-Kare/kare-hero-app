@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kare/utils/colors.dart';
+import 'package:kare/screens/signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -119,9 +120,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: const [
                     SizedBox(
                       width: 50,
-                      height: 30,
+                      height: 10,
                       child: Divider(
                         color: KareColors.gray2,
+                        thickness: 1.2,
                       ),
                     ),
                     Padding(
@@ -142,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 30,
                       child: Divider(
                         color: KareColors.gray2,
+                        thickness: 1.2,
                       ),
                     ),
                   ],
@@ -171,7 +174,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(color: KareColors.darkGray2, fontSize: 16),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'SIGN UP',
                         style:
