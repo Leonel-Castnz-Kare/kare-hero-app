@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kare/screens/login.dart';
 import 'package:kare/screens/signup.dart';
+import 'package:kare/utils/colors.dart';
 
 void main() {
   runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Home(),
   ));
 }
@@ -45,7 +47,7 @@ class _HomeState extends State<Home> {
                           },
                           style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(Colors.white),
+                                MaterialStatePropertyAll(KareColors.concrete),
                           ),
                           child: const Text(
                             'LOGIN',
@@ -66,7 +68,7 @@ class _HomeState extends State<Home> {
                           },
                           style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(Colors.orange),
+                                MaterialStatePropertyAll(KareColors.orange),
                           ),
                           child: Text('SIGNUP'),
                         ),
