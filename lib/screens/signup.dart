@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:kare/screens/login.dart';
 import 'package:kare/utils/colors.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -16,46 +16,90 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: KareColors.snow,
       appBar: AppBar(
         backgroundColor: KareColors.kareOrange,
         shadowColor: Colors.white,
         title: const Text('Sign Up'),
       ),
-      body: SafeArea(
+      body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const SizedBox(height: 8.0),
-              TextField(
-                decoration: const InputDecoration(
-                  hintText: 'First Name',
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              TextField(
-                decoration: const InputDecoration(
-                  hintText: 'Last Name',
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  hintText: 'Email',
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              TextFormField(
-                keyboardType: TextInputType.phone,
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(10),
-                  // PhoneFormatter(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 120.0,
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        print('Image button tapped');
+                        // Agrega la lógica para seleccionar una imagen aquí
+                      },
+                      icon: Icon(
+                        Icons.camera_alt,
+                        size: 60.0,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  )
                 ],
-                decoration: const InputDecoration(
-                  hintText: 'Phone (123)456-7890',
+              ),
+              const SizedBox(height: 8.0),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'First Name',
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'Last Name',
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              const TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              const TextField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  hintText: 'Phone (123) 456-7890',
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 8.0),
@@ -63,6 +107,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   hintText: 'Password',
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -81,6 +131,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 obscureText: _obscureConfirmPassword,
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: KareColors.orange,
+                      width: 2,
+                    ),
+                  ),
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -95,30 +151,69 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(KareColors.kareOrange),
-                ),
-                onPressed: () {},
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12.0),
-                  child: Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    height: 45,
+                    child: ElevatedButton(
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(KareColors.kareOrange),
+                        side: MaterialStatePropertyAll(
+                          BorderSide(color: KareColors.snow, width: 0.7),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          'SIGN UP',
+                          style: TextStyle(
+                            color: KareColors.snow,
+                            fontSize: 18,
+                            fontFamily: 'BrandonText',
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
               const SizedBox(height: 16.0),
-              const Text(
-                'Or Login With',
-                style: TextStyle(
-                    color: KareColors.darkGray2,
-                    fontSize: 18,
-                    fontFamily: 'BrandonText'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  SizedBox(
+                    width: 50,
+                    height: 10,
+                    child: Divider(
+                      color: KareColors.gray2,
+                      thickness: 1.2,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal: 10,
+                    ),
+                    child: Text(
+                      'Or Login With',
+                      style: TextStyle(
+                        color: KareColors.darkGray2,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 50,
+                    height: 30,
+                    child: Divider(
+                      color: KareColors.gray2,
+                      thickness: 1.2,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 16.0),
               Row(
@@ -143,20 +238,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'New user?',
-                    style: TextStyle(
-                        color: KareColors.darkGray2,
-                        fontSize: 18,
-                        fontFamily: 'BrandonText'),
+                    'Already have an account?',
+                    style: TextStyle(color: KareColors.darkGray2, fontSize: 16),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
                     child: const Text(
-                      'SIGN UP',
+                      'LOGIN',
                       style: TextStyle(
-                          color: KareColors.kareOrange,
-                          fontSize: 18,
-                          fontFamily: 'BrandonText'),
+                          color: KareColors.kareOrange, fontSize: 17),
                     ),
                   ),
                 ],
