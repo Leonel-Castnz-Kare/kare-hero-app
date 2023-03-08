@@ -47,7 +47,10 @@ class _HomeState extends State<Home> {
                           },
                           style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(KareColors.concrete),
+                            MaterialStatePropertyAll(KareColors.snow),
+                            side: MaterialStatePropertyAll(
+                              BorderSide(color: KareColors.kareOrange, width: 0.7),
+                            ),
                           ),
                           child: const Text(
                             'LOGIN',
@@ -68,7 +71,10 @@ class _HomeState extends State<Home> {
                           },
                           style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(KareColors.orange),
+                            MaterialStatePropertyAll(KareColors.kareOrange),
+                            side: MaterialStatePropertyAll(
+                              BorderSide(color: KareColors.snow, width: 0.7),
+                            ),
                           ),
                           child: Text('SIGNUP'),
                         ),
