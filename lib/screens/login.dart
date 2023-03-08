@@ -85,8 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {},
                       child: const Text(
                         'Forgot password?',
-                        style:
-                            TextStyle(color: KareColors.kareOrange, fontSize: 16),
+                        style: TextStyle(
+                            color: KareColors.kareOrange, fontSize: 16),
                       ),
                     ),
                   ],
@@ -108,7 +108,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {},
                         child: const Text(
                           'LOGIN',
-                          style: TextStyle(color: KareColors.kareOrange, fontSize: 18, fontFamily: 'BrandonText'),
+                          style: TextStyle(
+                              color: KareColors.kareOrange,
+                              fontSize: 18,
+                              fontFamily: 'BrandonText'),
                         ),
                       ),
                     ),
@@ -171,7 +174,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     const Text(
                       'New user?',
-                      style: TextStyle(color: KareColors.darkGray2, fontSize: 16),
+                      style:
+                          TextStyle(color: KareColors.darkGray2, fontSize: 16),
                     ),
                     TextButton(
                       onPressed: () {
@@ -183,8 +187,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const Text(
                         'SIGN UP',
-                        style:
-                            TextStyle(color: KareColors.kareOrange, fontSize: 17),
+                        style: TextStyle(
+                            color: KareColors.kareOrange, fontSize: 17),
                       ),
                     ),
                   ],
