@@ -40,11 +40,11 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 8.0),
               const KareTextField(
                 keyboardType: TextInputType.emailAddress,
-                hintText: 'Email',
+                labelText: 'Email',
               ),
               const SizedBox(height: 24.0),
               const KareTextField(
-                hintText: 'Password',
+                labelText: 'Password',
                 keyboardType: TextInputType.text,
                 suffixIcon: Icons.visibility,
                 obscureText: true,
